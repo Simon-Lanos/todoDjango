@@ -1,0 +1,11 @@
+<h2>Ajouter une tâche</h2>
+
+<form id="task_form" method="post" action="{% url 'index' %}">
+  {% csrf_token %}
+  {% for field in form.visible_fields %}
+      {{ field.errors }}
+      {{ field.help_text }} :
+      {{ field }}
+  {% endfor %}
+  <input type="submit" name="submit" value="Ajouter">
+</form>

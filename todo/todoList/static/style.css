@@ -1,0 +1,38 @@
+body{
+  font-family: Purisa, sans-serif;
+}
+
+.form-group {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#todo {
+    margin: 0 auto;
+    width: 500px;
+    list-style: none;
+}
+
+#todo li {
+    padding: 5px;
+}
+
+.icon-delete {
+	background: url(./delete.gif) no-repeat 10px 8px;
+	text-indent: 30px;
+	display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-done {
+  background: url(./done.png) no-repeat 10px 8px;
+	text-indent: 30px;
+	display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.done {
+  text-decoration: line-through;
+}

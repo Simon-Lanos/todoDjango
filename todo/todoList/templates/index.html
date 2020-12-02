@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Todo Application</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="form-group">
+      <h1>To-Do <small>List</small></h1>
+      
+      {% include "edit.html" %}
+    </div>
+
+    {% if task_list %}
+      <ul id="todo">
+      {% for task in task_list %}
+        <li class="{% if task.is_done %}done{% endif %}">
+
+          {{ task.content }}
+
+          <div class="action">
+            <a href="{% url 'delete' task.id %}" class="icon-delete"></a>
+
+            {% if not task.is_done %}
+              <a href="{% url 'done' task.id %}" class="icon-done"></a>
+            {% endif %}
+          </div>
+
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+        <h2>Pas de tâche</h2>
+    {% endif %}
+
+</body>
+</html>
