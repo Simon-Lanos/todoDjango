@@ -15,6 +15,7 @@ body{
 
 #todo li {
     padding: 5px;
+    border-bottom: 1px solid black; 
 }
 
 .icon-delete {
