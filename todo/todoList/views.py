@@ -24,6 +24,28 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+def edit(request, id):
+    task = get_object_or_404(Task, id = id)
+
+    form = TaskForm(instance = task)
+
+    context = {
+        'task': task,
+        'form': form,
+    }
+
+    if request.method == 'POST':
+            form = TaskForm(request.POST, instance = task)
+
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+            else:
+                print(form.errors)
+
+    return render(request, 'edit.html', context)
+
+
 
 def done(request, id):
     task = get_object_or_404(Task, id = id)

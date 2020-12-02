@@ -10,7 +10,7 @@
     <div class="form-group">
       <h1>To-Do <small>List</small></h1>
       
-      {% include "edit.html" %}
+      {% include "form.html" %}
     </div>
 
     {% if task_list %}
@@ -18,7 +18,9 @@
       {% for task in task_list %}
         <li class="{% if task.is_done %}done{% endif %}">
 
-          {{ task.content }}
+          <a href="{% url 'edit' task.id %}">
+            {{ task.content }}
+          </a>
 
           <div class="action">
             <a href="{% url 'delete' task.id %}" class="icon-delete"></a>

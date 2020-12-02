@@ -2,6 +2,11 @@ body{
   font-family: Purisa, sans-serif;
 }
 
+a {
+  color: #555;
+  text-decoration: none;
+}
+
 .form-group {
     text-align: center;
     padding-bottom: 25px;
